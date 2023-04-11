@@ -1,5 +1,6 @@
 import React from 'react'
 import LikeButton from './LikeButton'
+import Link from 'next/link'
 interface Post {
   userId: number
   id: number
@@ -32,8 +33,10 @@ const ListOfPosts = async () => {
     <>
       {posts.slice(0, 5).map((post) => (
         <article key={post.id}>
-          <h2 style={{ margin: '1rem 0', color: '#09f' }}>{post.title}</h2>
-          <p>{post.body}</p>
+          <Link href={`/posts/${post.id}`}>
+            <h2 style={{ margin: '1rem 0', color: '#09f' }}>{post.title}</h2>
+            <p>{post.body}</p>
+          </Link>
           <LikeButton />
         </article>
       ))}
