@@ -14,7 +14,14 @@ type CommentsPageProps = {
 }
 
 const fetchPostComments = async (id: string) => {
-  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
+  // simulate await time
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  // return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
+  //   cache: 'no-store'
+  // }).then((res) => res.json())
+
+  // FORZAR ERROR MEDIANTE URL INVALIDA PARA VER COMPONENTE ERROR.TSX
+  return fetch(`https://jsonplaceholder_WRONGURL.typicode.com/posts/${id}/comments`, {
     cache: 'no-store'
   }).then((res) => res.json())
 }
