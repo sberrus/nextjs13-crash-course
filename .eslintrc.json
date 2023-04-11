@@ -1,6 +1,17 @@
 {
   "extends": ["./node_modules/standard/eslintrc.json", "next/core-web-vitals"],
   "rules": {
-    "space-before-function-paren": ["error", "none"]
+    "space-before-function-paren": ["error", "always"]
+  },
+  // "overrides": [
+  //   {
+  //     "files": ["*.tsx"],
+  //     "rules": {
+  //       "no-undef": "off"
+  //     }
+  //   }
+  // ]
+  "globals": {
+    "JSX": true
   }
 }
